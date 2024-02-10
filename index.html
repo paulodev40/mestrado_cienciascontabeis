@@ -24,7 +24,7 @@
 
     <section id="sobre">
         <h2>Sobre a Dissertação</h2>
-        <p>Nas últimas décadas, tem-se observado uma crescente onda em prol da transparência governamental e do envolvimento cidadão na gestão dos recursos públicos. Este movimento é impulsionado pela crescente demanda por maior accountability e participação pública nas decisões governamentais. No cerne desta transformação está o avanço dos dados abertos governamentais. Estes dados, disponibilizados de maneira ampla e acessível, permitem que cidadãos, organizações e demais entidades analisem e compreendam melhor as ações do governo. Essa nova era de dados abertos está redefinindo a interação entre governo e sociedade, fomentando uma cultura de transparência e participação ativa na governança pública. Nesse contexto, este estudo tem como objetivo geral avaliar o grau de transparência dos dados abertos governamentais econômico-financeiros nos Portais de Dados Abertos dos Estados Brasileiros, utilizando o modelo OpenGovB de Veljković, Bogdanović-Dinić e Stoimenov (2014) como referencial. A pesquisa explora essa transparência sob as lentes das teorias da agência e do disclosure, explorando os critérios de autenticidade, compreensibilidade e reusabilidade dos dados. Metodologicamente, o estudo se desdobrou em duas fases: análise dos portais para identificar e avaliar as informações econômico-financeiras apresentadas e inspeção individual dos arquivos para avaliar compreensibilidade, autenticidade e reusabilidade. Os achados da pesquisa revelaram que os portais dos estados brasileiros, em geral, apresentaram um grau de transparência abaixo do esperado, variando entre 30% e 60%. Foram identificados desafios notáveis, incluindo problemas de autenticidade, falta de padronização e limitada adesão a formatos abertos, indicando uma urgente necessidade de melhorias nesses aspectos para alcançar os padrões desejados de transparência governamental..</p>
+        <p>Nas últimas décadas, tem-se observado uma crescente onda em prol da transparência governamental e do envolvimento cidadão na gestão dos recursos públicos. Este movimento é impulsionado pela crescente demanda por maior accountability e participação pública nas decisões governamentais. No cerne desta transformação está o avanço dos dados abertos governamentais. Estes dados, disponibilizados de maneira ampla e acessível, permitem que cidadãos, organizações e demais entidades analisem e compreendam melhor as ações do governo. Essa nova era de dados abertos está redefinindo a interação entre governo e sociedade, fomentando uma cultura de transparência e participação ativa na governança pública. Nesse contexto, este estudo tem como objetivo geral avaliar o grau de transparência dos dados abertos governamentais econômico-financeiros nos Portais de Dados Abertos dos Estados Brasileiros, utilizando o modelo OpenGovB de Veljković, Bogdanović-Dinić e Stoimenov (2014) como referencial. A pesquisa explora essa transparência sob as lentes das teorias da agência e do disclosure, explorando os critérios de autenticidade, compreensibilidade e reusabilidade dos dados. Metodologicamente, o estudo se desdobrou em duas fases: análise dos portais para identificar e avaliar as informações econômico-financeiras apresentadas e inspeção individual dos arquivos para avaliar compreensibilidade, autenticidade e reusabilidade. Os achados da pesquisa revelaram que os portais dos estados brasileiros, em geral, apresentaram um grau de transparência abaixo do esperado, variando entre 30% e 60%. Foram identificados desafios notáveis, incluindo problemas de autenticidade, falta de padronização e limitada adesão a formatos abertos, indicando uma urgente necessidade de melhorias nesses aspectos para alcançar os padrões desejados de transparência governamental.</p>
     </section>
 
     <section id="abstract">
@@ -116,10 +116,10 @@
 var meuGrafico = new Chart(ctx, {
     type: 'bar', // Tipo de gráfico
     data: {
-        labels: ['São Paulo', 'Santa Catarina', 'Goiás', 'Rio de Janeiro', 'Paraná', 'Amazonas'], // Exemplo de dados
+        labels: ['São Paulo', 'Santa Catarina', 'Goiás', 'Rio de Janeiro', 'Paraná', 'Amazonas', 'Ceará', 'Minas Gerais', 'Mato Grosso do Sul', 'Pernambuco', 'Distrito Federal', 'Pará', 'Paraíba', 'Espírito Santo', 'Tocantins', 'Sergipe', 'Bahia', 'Maranhão', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Piauí', 'Roraima', 'Acre', 'Mato Grosso', 'Amapá', 'Alagoas'], // Exemplo de dados
         datasets: [{
             label: 'Escore',
-            data: [0.6760, 0.6714, 0.6684, 0.6625, 0.6569, 0.6272], // Substitua pelos seus dados
+            data: [0.6760, 0.6714, 0.6684, 0.6625, 0.6569, 0.6272, 0.6271, 0.6225, 0.6128, 0.6119, 0.6008, 0.5895, 0.5833, 0.5825, 0.5796, 0.5758, 0.5691, 0.5670, 0.5615, 0.5475, 0.5468, 0.4956, 0.4917, 0.4917, 0.4837, 0.4702, 0.4448], // Substitua pelos seus dados
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
         }]
     },
@@ -130,7 +130,21 @@ var meuGrafico = new Chart(ctx, {
                 max: 1 // Definindo o máximo do eixo Y como 1
             }
         },
-        plugins: {
+        plugins: 
+        {
+            legend: {
+                display: true, // Se você quer exibir a legenda
+            },
+            title: {
+                display: true, // Habilita a exibição do título
+                text: '1. Ranking Estadual da Transparência dos Dados Abertos Ajustado', // Texto do título
+                font: {
+                    size: 18 // Tamanho da fonte do título
+                },
+                color: '#333', // Cor do texto do título
+                position: 'top', // Posição do título
+            },
+        
             annotation: {
                 annotations: {
                     linhaBaixa: {
@@ -224,7 +238,13 @@ var meuGrafico = new Chart(ctx, {
         }
     });
     </script>
-            
+          
+          <section id="looker-studio-grafico">
+            <h2>Gráfico de Transparência Governamental</h2>
+            <!-- Incorporando o gráfico do Looker Studio -->
+            <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/16b11eee-c1fd-4e8d-907f-92032f92db8b/page/poLjD" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        </section>
+        
 
 
 
