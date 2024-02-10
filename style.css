@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 22px;
+}
+
+section h2 {
+    margin-bottom: 20px; /* Ajuste este valor conforme necessário */
+    font-weight: bold;
+    font-size: 21px;
+}
+
+
+header h1 {
+    margin: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: justify;    
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+#capitulos .capitulo {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#capitulos .capitulo h3 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+#capitulos .capitulo p {
+    font-size: 16px;
+}
+
+#capitulos .capitulo a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+#capitulos .capitulo a:hover {
+    background-color: #0056b3;
+}
+
