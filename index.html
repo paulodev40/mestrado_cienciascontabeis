@@ -14,6 +14,8 @@
                 <li><a href="#sobre">Sobre a Dissertação</a></li>
                 <li><a href="#abstract">Abstract</a></li>
                 <li><a href="#capitulos">Capítulos</a></li>
+                <li><a href="#Dados">Dados</a></li>
+                <li><a href="#Gráficos">Gráficos</a></li>
                 <li><a href="#autor">Sobre o Autor</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -92,6 +94,141 @@
             <a href="arquivos/apendice dissertacao.pdf" download="referencias.pdf">Baixar PDF</a>
         </div>
         <!-- Repita para outros capítulos -->
+    </section>
+
+    <section id="Dados">
+        <h2>Dados coletados</h2>
+        <p>Informações sobre o autor e sua jornada acadêmica.</p>
+    </section>
+
+    <section id="Gráficos">
+        <h2>Análise Gráfica dos dados coletados</h2>
+        <p>Informações sobre o autor e sua jornada acadêmica.</p>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+
+        <canvas id="meuGrafico"></canvas>
+
+        <script>
+            var ctx = document.getElementById('meuGrafico').getContext('2d');
+var meuGrafico = new Chart(ctx, {
+    type: 'bar', // Tipo de gráfico
+    data: {
+        labels: ['São Paulo', 'Santa Catarina', 'Goiás', 'Rio de Janeiro', 'Paraná', 'Amazonas'], // Exemplo de dados
+        datasets: [{
+            label: 'Escore',
+            data: [0.6760, 0.6714, 0.6684, 0.6625, 0.6569, 0.6272], // Substitua pelos seus dados
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 1 // Definindo o máximo do eixo Y como 1
+            }
+        },
+        plugins: {
+            annotation: {
+                annotations: {
+                    linhaBaixa: {
+                        type: 'line',
+                        yMin: 0.05,
+                        yMax: 0.05,
+                        borderColor: 'red',
+                        borderWidth: 2,
+                        label: {
+                            content: 'Baixa',
+                            enabled: true,
+                            position: 'end'
+                        }
+                    },
+                    linhaBasica: {
+                        type: 'line',
+                        yMin: 0.2,
+                        yMax: 0.2,
+                        borderColor: 'orange',
+                        borderWidth: 2,
+                        label: {
+                            content: 'Básica',
+                            enabled: true,
+                            position: 'end'
+                        }
+                    },
+                    linhaMedia: {
+                        type: 'line',
+                        yMin: 0.75,
+                        yMax: 0.75,
+                        borderColor: 'green',
+                        borderWidth: 2,
+                        label: {
+                            content: 'Média',
+                            enabled: true,
+                            position: 'end'
+                        }
+                    },
+                    linhaAlta: {
+                        type: 'line',
+                        yMin: 0.9,
+                        yMax: 0.9,
+                        borderColor: 'blue',
+                        borderWidth: 2,
+                        label: {
+                            content: 'Alta',
+                            enabled: true,
+                            position: 'end'
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
+
+            </script>
+
+<canvas id="meuGrafico1"></canvas>
+
+<script>
+    var ctx = document.getElementById('meuGrafico1').getContext('2d');
+    var meuGrafico = new Chart(ctx, {
+        type: 'bar', // Tipo de gráfico: barra, linha, torta, etc.
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril'], // Substitua pelos seus dados
+            datasets: [{
+                label: 'Número de Acessos',
+                data: [50, 60, 70, 80], // Substitua pelos seus dados
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+            
+
+
+
+
     </section>
 
     <section id="autor">
