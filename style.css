@@ -123,3 +123,23 @@ footer p {
     border: 0;
 }
 
+#dados-transparencia table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dados-transparencia th, #dados-transparencia td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#dados-transparencia tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#dados-transparencia th {
+    background-color: #4CAF50;
+    color: white;
+}
+
