@@ -131,7 +131,7 @@ footer p {
 #dados-transparencia th, #dados-transparencia td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 #dados-transparencia tr:nth-child(even) {
@@ -142,4 +142,35 @@ footer p {
     background-color: #4CAF50;
     color: white;
 }
+
+#download-planilha .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#download-planilha .downloads {
+    /* Ajuste a largura conforme necessário */
+    flex: 1; /* Dá mais espaço para os downloads */
+}
+
+#download-planilha .imagem-lateral {
+    flex: 2; /* Menos espaço para a imagem */
+    /* Ajuste o alinhamento conforme necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px; /* Adiciona um pouco de espaço entre os downloads e a imagem */
+}
+
+#download-planilha .imagem-lateral img {
+    max-width: 100%;
+    height: auto;
+}
+
+#download-planilha .imagem-lateral h3 {
+    color: #333; /* Cor do texto */
+    text-align: left; /* Centraliza o texto */
+    margin-bottom: 300px; /* Espaço abaixo do título */
+    font-size: 12px;
+    }
 
