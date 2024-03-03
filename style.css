@@ -11,10 +11,10 @@ body {
 header {
     background-color: #007BFF;
     color: #ffffff;
-    padding: 30px 20px;
+    padding: 15px 20px;
     text-align: center;
-    font-size: 18px;
-    height: 90px;
+    font-size: 12px;
+    height: 100px;
     
 }
 
@@ -36,6 +36,8 @@ nav ul {
     list-style-type: none;
     padding: 0;
     text-align: left;
+    font-size: 15pt;
+    
 }
 
 nav ul li {
