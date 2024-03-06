@@ -726,6 +726,150 @@ options: {
 
         </script>
 
+<title>Mapa de Calor da Transparência dos Estados</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<style>
+    #map { height: 600px; }
+</style>
+
+<div id="legend" style="position: absolute; bottom: 50px; left: 50px; background: white; padding: 10px;"></div>
+
+<div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([-14.2350, -51.9253], 4);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var scores = {
+    "São Paulo": 0.609,
+    "Santa Catarina": 0.573,
+    "Goiás": 0.57,
+    "Rio de Janeiro": 0.567,
+    "Paraná": 0.558,
+    "Minas Gerais": 0.545,
+    "Ceará": 0.542,
+    "Amazonas": 0.514,
+    "Mato Grosso do Sul": 0.498,
+    "Distrito Federal": 0.498,
+    "Pernambuco": 0.476,
+    "Pará": 0.467,
+    "Maranhão": 0.462,
+    "Paraíba": 0.456,
+    "Espírito Santo": 0.456,
+    "Sergipe": 0.454,
+    "Rio Grande do Norte": 0.445,
+    "Tocantins": 0.445,
+    "Bahia": 0.439,
+    "Rondônia": 0.426,
+    "Roraima": 0.426,
+    "Rio Grande do Sul": 0.417,
+    "Amapá": 0.368,
+    "Piauí": 0.363,
+    "Acre": 0.363,
+    "Mato Grosso": 0.347,
+    "Alagoas": 0.296
+};
+
+            function getColor(score) {
+            return score > 0.6 ? '#1a9641' : // Verde
+                    score > 0.5 ? '#a6d96a' : // Verde Claro
+                    score > 0.4 ? '#ffffbf' : // Amarelo
+                    score > 0.3 ? '#fdae61' : // Laranja
+                         '#d7191c';   // Vermelho
+};
+
+        function style(feature) {
+            return {
+                fillColor: getColor(scores[feature.properties.name]),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                fillOpacity: 0.7
+            };
+        };
+
+        fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/main/public/data/brazil-states.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJson(data, {style: style}).addTo(map);
+            });
+    </script>
+<script>
+function addLegend(map) {
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = [0, 0.3, 0.4, 0.5, 0.6],
+            labels = [],
+            from, to;
+
+        for (var i = 0; i < grades.length; i++) {
+            from = grades[i];
+            to = grades[i + 1];
+
+            labels.push(
+                '<i style="background:' + getColor(from + 0.01) + '"></i> ' +
+                from + (to ? '&ndash;' + to : '+'));
+        }
+
+        div.innerHTML = labels.join('<br>');
+        return div;
+    };
+
+    legend.addTo(map);
+}
+</script>
+
+<script>
+fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/main/public/data/brazil-states.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJson(data, {style: style}).addTo(map);
+        addLegend(map);
+    });
+
+    function onEachFeature(feature, layer) {
+    if (feature.properties && scores[feature.properties.name]) {
+        layer.bindTooltip(scores[feature.properties.name].toFixed(3), {
+            permanent: true,
+            className: "state-label",
+            offset: [0, 0],
+            direction: 'center'
+        });
+    }
+}
+
+
+function style(feature) {
+    return {
+        fillColor: getColor(scores[feature.properties.name]),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        fillOpacity: 0.7
+    };
+}
+
+fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/main/public/data/brazil-states.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJson(data, {
+            style: style,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+        addLegend(map);
+    });
+
+
+</script>
+
+
+
 
        
        <section id="sua-section">

@@ -176,3 +176,15 @@ footer p {
     font-size: 12px;
     }
 
+    .state-label {
+        background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com transparência */
+        border: 10px solid black; /* Tamanho e cor da borda */
+        font-size: 10px; /* Tamanho da fonte */
+        font-weight: bold;
+        color: black; /* Cor da fonte */
+        padding: 2px; /* Espaçamento interno */
+        border-radius: 2px; /* Arredondamento das bordas */
+    }
+    
+    
+
